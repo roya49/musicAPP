@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/back_layout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/fragment_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/song_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/song_image"
+            android:src="@mipmap/init"
+            android:layout_marginLeft="10dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1.5"
+            android:layout_marginLeft="5dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:textSize="15dp"
+                android:singleLine="true"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="-1"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:textColor="@color/menu_normal"
+                android:gravity="left"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/song_info"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/btn_pause"
+                android:layout_gravity="right"
+                android:layout_marginTop="30dp"
+                android:maxLines="1"
+                android:background="@color/transparent"
+                android:text="播放"
+                android:textSize="15dp"/>
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:id="@+id/btn_mode"
+                android:layout_gravity="right"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="7dp"
+                android:maxLines="1"
+                android:background="@color/transparent"
+                android:text="单曲循环"
+                android:textSize="15dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#e4e4e4"
+        app:itemIconTint="@drawable/bottom_menu_selector"
+        app:itemTextColor="@drawable/bottom_menu_selector"
+        app:menu="@menu/bottom_menu"/>
+
+</LinearLayout>
